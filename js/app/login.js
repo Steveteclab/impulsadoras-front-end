@@ -1,5 +1,15 @@
+<<<<<<< HEAD
+import { BASE_URL } from './config'; // eliminar
+
+// Determina el entorno actual (por ejemplo, a través de una variable de entorno NODE_ENV)
+const isDevelopment = process.env.NODE_ENV === 'development';
+
+// Usa la URL base correspondiente al entorno
+const BASE_URL = isDevelopment ? DEV_BASE_URL : PROD_BASE_URL;
+=======
 // Definir la URL base como una variable global
 const BASE_URL = 'http://localhost:3000';
+>>>>>>> 1e34bf70534dd2a22608146c82d591c2cd75a1f4
 
 // Escuchar el evento de envío del formulario
 document.getElementById('formAuthentication').addEventListener('submit', function (e) {
