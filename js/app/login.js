@@ -1,3 +1,4 @@
+
 // Definir la URL base como una variable global
 const BASE_URL = 'http://localhost:3000';
 
