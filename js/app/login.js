@@ -1,4 +1,4 @@
-import { BASE_URL } from './config';
+import { BASE_URL } from './config'; // eliminar
 
 // Determina el entorno actual (por ejemplo, a través de una variable de entorno NODE_ENV)
 const isDevelopment = process.env.NODE_ENV === 'development';
