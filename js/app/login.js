@@ -1,10 +1,5 @@
-import { BASE_URL } from './config';
-
-// Determina el entorno actual (por ejemplo, a través de una variable de entorno NODE_ENV)
-const isDevelopment = process.env.NODE_ENV === 'development';
-
-// Usa la URL base correspondiente al entorno
-const BASE_URL = isDevelopment ? DEV_BASE_URL : PROD_BASE_URL;
+// Definir la URL base como una variable global
+const BASE_URL = 'http://localhost:3000';
 
 // Escuchar el evento de envío del formulario
 document.getElementById('formAuthentication').addEventListener('submit', function (e) {
@@ -12,12 +7,12 @@ document.getElementById('formAuthentication').addEventListener('submit', functio
 
     const username = document.getElementById('email').value;
     const password = document.getElementById('password').value;
-    
+
     // Construir la URL completa para la solicitud
     const loginUrl = `${BASE_URL}/api/login`;
 
     // Enviar las credenciales al servidor en formato JSON
-    fetch(`${loginUrl}`, {
+    fetch(loginUrl, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -35,7 +30,7 @@ document.getElementById('formAuthentication').addEventListener('submit', functio
             window.location.href = "index.html";
         } else {
             // El inicio de sesión falló, el servidor devolvió un mensaje de error
-            alert('Inicio de sesión fallido. ' + data.mensaje);
+            alert('Inicio de sesión fallido. ' + data.msg);
         }
     })
     .catch(error => {
